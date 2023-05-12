@@ -3,6 +3,8 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { AlbumRoutingModule } from './pages/album/album-routing.module';
+
 
 @NgModule({
   declarations: [
@@ -10,7 +12,9 @@ import { AppComponent } from './app.component';
   ],
   imports: [
     BrowserModule,
+    AlbumRoutingModule,
     AppRoutingModule
+  
   ],
   providers: [],
   bootstrap: [AppComponent]
