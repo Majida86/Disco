@@ -1,0 +1,86 @@
+Modules/Components
+
+
+Module homepage
+Module hompage routing
+Component Index
+
+
+
+Module artist
+Module artist routing
+Component Index (Liste des artistes)
+Component Create
+Component Read
+Component Update
+Component Delete
+Service Artist
+Interface Artist
+
+
+Module album
+Module album routing
+Component Index (Liste des albums)
+Component Create
+Component Read
+Component Update
+Component Delete
+Service Album
+Interface Album
+
+Module track
+Module track routing
+Component Index (Liste des tracks)
+Component Create
+Component Read
+Component Update
+Component Delete
+Service Track
+Interface Track
+
+
+Module NotFound
+Module NotFound routing
+Component Index
+
+
+ARCHITECTURE
+
+pages/homepage
+pages/artist
+pages/album
+pages/track
+
+core/pages/NotFound
+core/guards
+core/interceptors
+core/layout/header
+core/layout/footer
+
+
+
+
+ROUTAGE/SITE MAP
+
+/ --> /accueil
+/accueil
+
+/albums (liste des albums) -->index
+/album (cretion de l'album) -->Create
+/album/42 (detais d'un album) -->Read
+/album/42/edit (modification de l'album)
+/album/42/delete (supression de l'album) -->delete
+
+/artistes (liste des artistes) -->index
+/artiste (cretion de l'artiste) -->Create
+/artiste/42 (detais d'un artiste) -->Read
+/artiste/42/edit (modification de l'artiste)
+/artiste/42/delete (supression de l'artiste) -->delete
+
+/pistes (liste des pistes) -->index
+/piste (cretion de l'piste) -->Create
+/piste/42 (detais d'un piste) -->Read
+/piste/42/edit (modification de l'piste)
+/piste/42/delete (supression de l'piste) -->delete
+
+/not-found
