@@ -3,7 +3,9 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { AlbumRoutingModule } from './pages/album/album-routing.module';
+import { CoreModule } from './core/core.module';
+import { PagesModule } from './pages/pages.module';
+
 
 
 @NgModule({
@@ -12,7 +14,8 @@ import { AlbumRoutingModule } from './pages/album/album-routing.module';
   ],
   imports: [
     BrowserModule,
-    AlbumRoutingModule,
+    CoreModule,
+    PagesModule,
     AppRoutingModule
   
   ],

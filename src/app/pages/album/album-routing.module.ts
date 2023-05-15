@@ -4,6 +4,7 @@ import { IndexComponent } from './pages/index/index.component';
 import { CreateComponent } from './pages/create/create.component';
 import { UpdateComponent } from './pages/update/update.component';
 import { DeleteComponent } from './pages/delete/delete.component';
+import { ReadComponent } from './pages/read/read.component';
 
 const routes: Routes = [
 
@@ -21,6 +22,10 @@ const routes: Routes = [
       {
         path: ':id',
         children:[
+          {
+            path: '',
+            component: ReadComponent
+          },
 
           {
             path: 'edit',

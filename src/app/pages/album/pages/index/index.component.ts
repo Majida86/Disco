@@ -21,8 +21,8 @@ export class IndexComponent implements OnInit{
 
     .get( url)
 
-    .subscribe(data =>{
-      this.albums = data
+    .subscribe(response =>{
+      this.albums = response
     });
     
   }
