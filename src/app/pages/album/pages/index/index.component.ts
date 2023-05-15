@@ -1,6 +1,6 @@
 import { HttpClient} from '@angular/common/http';
-
 import { Component, OnInit } from '@angular/core';
+import { AlbumService } from '../../services/album.service';
 
 const url = "http://localhost:3000/albums";
 
@@ -14,16 +14,19 @@ export class IndexComponent implements OnInit{
   public albums!: any;
 
   constructor(
-    private httpClient: HttpClient
-  ){}
+    // private httpClient: HttpClient
+    private albumService: AlbumService
+  ){
+    this.albumService.getAlbumsFromApi()
+  }
   ngOnInit(): void {
-    this.httpClient
+    // this.httpClient
+    // .get( url)
+    // .subscribe(response =>{
+    //   this.albums = response
+    // });
 
-    .get( url)
-
-    .subscribe(response =>{
-      this.albums = response
-    });
+    this.albumService.albums.subscribe(data => this.albums = data);
     
   }
 

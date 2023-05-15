@@ -5,6 +5,8 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { CoreModule } from './core/core.module';
 import { PagesModule } from './pages/pages.module';
+import { HTTP_INTERCEPTORS } from '@angular/common/http';
+import { ApiInterceptor } from './core/interceptors/api.interceptor';
 
 
 
@@ -19,7 +21,13 @@ import { PagesModule } from './pages/pages.module';
     AppRoutingModule
   
   ],
-  providers: [],
+  providers: [
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: ApiInterceptor,
+      multi: true
+    }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
