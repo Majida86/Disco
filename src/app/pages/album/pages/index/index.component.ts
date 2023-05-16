@@ -1,6 +1,7 @@
 import { HttpClient} from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { AlbumService } from '../../services/album.service';
+import { Router } from '@angular/router';
 
 const url = "http://localhost:3000/albums";
 
@@ -10,12 +11,14 @@ const url = "http://localhost:3000/albums";
   styleUrls: ['./index.component.scss']
 })
 export class IndexComponent implements OnInit{
+  [x: string]: any;
 
   public albums!: any;
 
   constructor(
     // private httpClient: HttpClient
     private albumService: AlbumService
+   
   ){
     this.albumService.getAlbumsFromApi()
   }
@@ -29,5 +32,9 @@ export class IndexComponent implements OnInit{
     this.albumService.albums.subscribe(data => this.albums = data);
     
   }
+  onAddNewAlbum(){
+    
+  }
+  
 
 }

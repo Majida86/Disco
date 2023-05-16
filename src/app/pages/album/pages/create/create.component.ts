@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { NgForm } from '@angular/forms';
+import { FormBuilder, FormGroup, NgForm } from '@angular/forms';
 
 @Component({
   selector: 'app-create',
@@ -9,16 +9,19 @@ import { NgForm } from '@angular/forms';
 })
 export class CreateComponent implements OnInit{
 
-  titreAlbum!: string;
+  albumForm!: FormGroup;
 
-  constructor(private router: Router) { }
-
+  constructor( private formBuilder: FormBuilder) { }
   ngOnInit(): void {
-   
+  this.albumForm = this.formBuilder.group({
+    title: [null],
+    adresseId: [null],
+  });
   }
-  onSubmitForm(form: NgForm) {
-  console.log(form.value);
-  }
+
+onSubmitForm(): void {
+  console.log(this.albumForm.value);
+}
 
 
 }

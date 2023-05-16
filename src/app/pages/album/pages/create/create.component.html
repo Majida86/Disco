@@ -1,8 +1,13 @@
-<h1>Ajouter un album</h1>
-<form #titleForm="ngForm" (ngSubmit)="onSubmitForm(titleForm)">
+<div class="form-card">
+    <h2>NOUVEAU ALBUM</h2>
+    <form [formGroup]="albumForm">
+    <div class="form-group">
+        <label for="title">Titre</label>
+        <input type="text" id="title" formControlName="title">
+    </div>
+    <div class="action-buttons">
+        <button type="submit" (click)="onSubmitForm()">Enregistrer</button>
+    </div>
+    </form>
+</div>
 
-    <label for="albumTitle">Titre de l'album</label>
-    <input type="text" id="albumTitle"  [(ngModel)]="titreAlbum" name="titreAlbum" >
-    <button type="submit"> Ajouter !</button>
-
-</form>
