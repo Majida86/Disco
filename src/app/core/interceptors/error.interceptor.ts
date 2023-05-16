@@ -5,7 +5,8 @@ import {
   HttpEvent,
   HttpInterceptor
 } from '@angular/common/http';
-import { Observable } from 'rxjs';
+import { Observable, throwError } from 'rxjs';
+import { catchError } from 'rxjs/operators';
 
 @Injectable()
 export class ErrorInterceptor implements HttpInterceptor {
@@ -13,6 +14,15 @@ export class ErrorInterceptor implements HttpInterceptor {
   constructor() {}
 
   intercept(request: HttpRequest<unknown>, next: HttpHandler): Observable<HttpEvent<unknown>> {
-    return next.handle(request);
+    return next.handle(request).pipe(catchError(response => {
+
+      // console.log(response.status);
+      
+      let message = "Une erreur est survenue lors de la requete...";
+
+      alert(message);
+
+      return throwError(() => new Error(message));
+    }));
   }
 }

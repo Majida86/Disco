@@ -7,6 +7,8 @@ import { CoreModule } from './core/core.module';
 import { PagesModule } from './pages/pages.module';
 import { HTTP_INTERCEPTORS } from '@angular/common/http';
 import { ApiInterceptor } from './core/interceptors/api.interceptor';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { ErrorInterceptor } from './core/interceptors/error.interceptor';
 
 
 
@@ -18,6 +20,8 @@ import { ApiInterceptor } from './core/interceptors/api.interceptor';
     BrowserModule,
     CoreModule,
     PagesModule,
+    FormsModule,
+    ReactiveFormsModule,
     AppRoutingModule
   
   ],
@@ -25,6 +29,11 @@ import { ApiInterceptor } from './core/interceptors/api.interceptor';
     {
       provide: HTTP_INTERCEPTORS,
       useClass: ApiInterceptor,
+      multi: true
+    },
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: ErrorInterceptor,
       multi: true
     }
   ],

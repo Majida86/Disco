@@ -1,1 +1,8 @@
-<p>create works!</p>
+<h1>Ajouter un album</h1>
+<form #titleForm="ngForm" (ngSubmit)="onSubmitForm(titleForm)">
+
+    <label for="albumTitle">Titre de l'album</label>
+    <input type="text" id="albumTitle"  [(ngModel)]="titreAlbum" name="titreAlbum" >
+    <button type="submit"> Ajouter !</button>
+
+</form>

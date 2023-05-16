@@ -8,6 +8,7 @@ import { ReadComponent } from './pages/read/read.component';
 import { UpdateComponent } from './pages/update/update.component';
 import { DeleteComponent } from './pages/delete/delete.component';
 import { HttpClientModule } from '@angular/common/http';
+import { FormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -21,6 +22,7 @@ import { HttpClientModule } from '@angular/common/http';
   imports: [
     CommonModule,
     HttpClientModule,
+    FormsModule,
     AlbumRoutingModule
   ]
 })
